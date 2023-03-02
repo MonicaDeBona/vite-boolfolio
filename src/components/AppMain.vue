@@ -43,7 +43,7 @@ export default {
             </div>
         </div>
 
-        <div class="row">
+        <div class="projects">
             <ProjectCard v-for="project in projects" :title="project.title" :image="project.image"
                 :content="project.content" :type="project.type" :author="project.author" />
         </div>

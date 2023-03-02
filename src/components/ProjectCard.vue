@@ -5,7 +5,7 @@ export default {
         title: String,
         image: String,
         content: String,
-        type: String,
+        type: Object,
         author: String,
     },
 }
@@ -21,7 +21,7 @@ export default {
             </div>
             <p class="card-text text-center">{{ content }}</p>
             <ul class="list-unstyled text-center mb-4">
-                <li class="text-muted">Type: {{ type }}</li>
+                <li class="text-muted">Type: {{ type.name }}</li>
                 <li class="text-muted">Author: {{ author }}</li>
             </ul>
         </div>
