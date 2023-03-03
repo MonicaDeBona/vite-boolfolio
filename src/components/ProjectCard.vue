@@ -2,33 +2,34 @@
 export default {
     name: 'ProjectCard',
     props: {
-        title: String,
-        image: String,
-        content: String,
-        type: Object,
-        author: String,
-        technologies: Array,
+        'project': {
+            type: Object,
+            required: true,
+        }
     },
 }
 </script>
 <template>
     <div class="card single-project">
         <div class="card-header text-center">
-            <h3 class="card-title">{{ title }}</h3>
+            <h3 class="card-title">{{ project.title }}</h3>
         </div>
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
             <div class="card-image">
-                <img v-if="image.startsWith('imgs/')" :src="'http://127.0.0.1:8000/storage/' + image" :alt="title">
-                <img v-else :src="image" alt="title">
+                <img v-if="project.image.startsWith('imgs/')" :src="'http://127.0.0.1:8000/storage/' + project.image"
+                    :alt="project.title">
+                <img v-else :src="project.image" alt="project.title">
             </div>
-            <p class="card-text text-center">{{ content }}</p>
+            <p class="card-text text-center">{{ project.content.substr(0, 100) }}...</p>
             <ul class="list-unstyled text-center mb-4">
-                <li class="text-muted">Type: {{ type.name }}</li>
-                <li class="text-muted">Author: {{ author }}</li>
+                <li class="text-muted">Type: {{ project.type.name }}</li>
+                <li class="text-muted">Author: {{ project.author }}</li>
                 <li class="text-muted">
-                    <span v-for=" technology in technologies">-{{ technology.name }} </span>
+                    <span v-for=" technology in project.technologies">-{{ technology.name }} </span>
                 </li>
             </ul>
+            <router-link :to="{ name: 'project', params: { slug: project.slug } }" class="btn btn-primary">Read
+                More</router-link>
         </div>
     </div>
 </template>

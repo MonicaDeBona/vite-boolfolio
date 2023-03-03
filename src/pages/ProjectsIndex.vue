@@ -1,9 +1,9 @@
-<script >
+<script>
 import axios from 'axios';
-import ProjectCard from './ProjectCard.vue';
+import ProjectCard from '../components/ProjectCard.vue';
 
 export default {
-    name: 'AppMain',
+    name: 'ProjectsIndex',
     components: {
         ProjectCard,
     },
@@ -35,14 +35,15 @@ export default {
 }
 </script>
 
-<template >
-    <section class="container">
-
-
-        <div class="projects">
-
+<template>
+    <div class="row">
+        <div class="col-12">
+            Projects
         </div>
-    </section>
+    </div>
+    <div class="row">
+        <ProjectCard v-for="project in projects" :project="project" />
+    </div>
 </template>
 
 <style lang="scss"></style>
