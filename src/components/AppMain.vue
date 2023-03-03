@@ -1,4 +1,4 @@
-<script>
+<script >
 import axios from 'axios';
 
 import ProjectCard from './ProjectCard.vue';

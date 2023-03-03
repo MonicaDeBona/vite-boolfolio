@@ -17,7 +17,8 @@ export default {
         </div>
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
             <div class="card-image">
-                <img :src="image">
+                <img v-if="image.startsWith('imgs/')" :src="'http://127.0.0.1:8000/storage/' + image" :alt="title">
+                <img v-else :src="image" alt="">
             </div>
             <p class="card-text text-center">{{ content }}</p>
             <ul class="list-unstyled text-center mb-4">
@@ -31,3 +32,4 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/general.scss' as *;
 </style>
+
