@@ -45,7 +45,8 @@ export default {
 
         <div class="projects">
             <ProjectCard v-for="project in projects" :title="project.title" :image="project.image"
-                :content="project.content" :type="project.type" :author="project.author" />
+                :content="project.content" :type="project.type" :author="project.author"
+                :technologies="project.technologies" />
         </div>
     </section>
 </template>
