@@ -3,7 +3,7 @@ import axios from 'axios';
 import ProjectCard from '../components/ProjectCard.vue';
 export default {
     name: "SingleProject",
-    component: {
+    components: {
         ProjectCard,
     },
     data() {
@@ -34,11 +34,8 @@ export default {
 </script>
 
 <template>
-    <div>
-        Home del singolo project {{ this.$route.params.slug }}
-    </div>
     <div class="row">
-        <ProjectCard :project="project" />
+        <ProjectCard :project="project" :isShow="true" />
     </div>
 </template>
 

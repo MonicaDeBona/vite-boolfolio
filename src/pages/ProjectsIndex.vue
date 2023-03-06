@@ -42,7 +42,7 @@ export default {
         </div>
     </div>
     <div class="row">
-        <ProjectCard v-for="project in projects" :project="project" />
+        <ProjectCard v-for="project in projects" :project="project" class="col-4" />
     </div>
 </template>
 

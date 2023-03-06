@@ -21,7 +21,7 @@ export default {
 <template>
   <AppHeader />
   <main class="container">
-    <router-view />
+    <router-view></router-view>
   </main>
 </template>
 
