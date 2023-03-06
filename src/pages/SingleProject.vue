@@ -8,7 +8,7 @@ export default {
     },
     data() {
         return {
-            project: null,
+            project: [],
             apiUrl: "http://127.0.0.1:8000/api/projects/",
         };
     },
@@ -16,7 +16,7 @@ export default {
         getProject() {
             axios.get(this.apiUrl + this.$route.params.slug, {
                 params: {
-
+                    'api_token': 'S2AtUREfT9fPQYfTq4sCKq35O2MJ9vtJOQUwBhx4LU2cEAB8CJo2H84tL7bWnsTxObV6P0QQkLJqNkIU',
                 }
             })
                 .then((response) => {

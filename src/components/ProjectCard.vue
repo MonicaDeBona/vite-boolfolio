@@ -25,7 +25,7 @@ export default {
                     :alt="project.title" class="img-fluid">
                 <img v-else :src="project.image" alt="project.title" class="img-fluid">
             </div>
-            <p class="card-text text-center">{{ project.content.substr(0, 100) }}...</p>
+            <p class="card-text text-center">{{ (isShow) ? project.content : project.content.substr(0, 100) }}...</p>
             <ul class="list-unstyled text-center mb-4">
                 <li class="text-muted">Type: {{ project.type.name }}</li>
                 <li class="text-muted">Author: {{ project.author }}</li>
